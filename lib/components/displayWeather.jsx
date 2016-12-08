@@ -14,16 +14,17 @@ export default class DisplayWeather extends Component {
     if(!_.isEmpty(tenDay)){
     for (var i=0; i<tenDay.length; i++){
         htmlStuff.push(
-          <div>{tenDay[i].conditions}</div>)
-
-
-
+          <div>
+          <ul>
+            <li>{tenDay[i].date.pretty}</li>
+            <li>{tenDay[i].conditions}</li>
+            <li>HIGH: {tenDay[i].high.fahrenheit}</li>
+            <li>LOW: {tenDay[i].low.fahrenheit}</li>
+          </ul>
+        </div>)
+      }
     }
-  }
-
-
-  debugger
-
+    debugger
     return(
       <div>
         { htmlStuff }
