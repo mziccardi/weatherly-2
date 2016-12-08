@@ -23,9 +23,9 @@ export default class DisplayWeather extends Component {
           </ul>
         </div>)
       }
+      console.log(tenDayStuff)
+      // localStorage.setItem('tenDayStuff', JSON.stringify(tenDayStuff));
     }
-    debugger
-    // localStorage.setItem('tenDayStorage', JSON.stringify(tenDayStuff));
     return(
       <div>
         { tenDayStuff }

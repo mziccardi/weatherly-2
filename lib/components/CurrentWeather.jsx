@@ -9,14 +9,13 @@ export default class CurrentWeather extends Component {
 
   }
   render(){
-    let current = this.props.weatherArray ? this.props.weatherArray.current_observation.temp_f : []
-    if(!_.isEmpty(current)){
-      <div className ='current-display'>
-        <span>It is currently:</span> {current} in {this.props.city}
-      </div>
+    let current = this.props.weatherArray ? this.props.weatherArray.current_observation.temp_f : null;
+    if(!current){
+      return <div></div>
     }
-    return(
-      <div>{current}</div>
+    return(  <div className ='current-display'>
+        It is currently: {current} in {this.props.city}
+      </div>
     )
   }
 };
