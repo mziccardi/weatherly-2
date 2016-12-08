@@ -1,7 +1,8 @@
 import React from 'react';
 import { Component } from 'react';
-import UserInput from './userInput.js';
-import DisplayWeather from './displayWeather'
+import UserInput from './userInput';
+import DisplayWeather from './DisplayWeather'
+import CurrentWeather from './CurrentWeather'
 const $ = require('jquery');
 
 export default class Application extends Component {
@@ -23,7 +24,8 @@ export default class Application extends Component {
 
   }
 
-
+// this.props.weatherArray.current_observation.temp_f
+//THAT IS THE CURRENT TEMERATURE!
 
   setLocation({ city, state}) {
     this.setState({ city, state})
@@ -40,8 +42,13 @@ export default class Application extends Component {
           setLocation =
           {(location) => this.setLocation(location)}
         />
+        <CurrentWeather
+          city= {this.state.city}
+          weatherArray={this.state.weatherArray}
+        />
         <DisplayWeather
-        weatherArray= {this.state.weatherArray} />
+        weatherArray= {this.state.weatherArray}
+        />
 
 
       </section>

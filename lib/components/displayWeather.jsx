@@ -10,24 +10,25 @@ export default class DisplayWeather extends Component {
   }
   render(){
     let tenDay= this.props.weatherArray ? this.props.weatherArray.forecast.simpleforecast.forecastday :[]
-    var htmlStuff = [];
+    var tenDayStuff = [];
     if(!_.isEmpty(tenDay)){
     for (var i=0; i<tenDay.length; i++){
-        htmlStuff.push(
-          <div>
+        tenDayStuff.push(
+          <div className ='tenDay-display'>
           <ul>
-            <li>{tenDay[i].date.pretty}</li>
-            <li>{tenDay[i].conditions}</li>
-            <li>HIGH: {tenDay[i].high.fahrenheit}</li>
-            <li>LOW: {tenDay[i].low.fahrenheit}</li>
+            <li className ='tenDay-pretty'>{tenDay[i].date.pretty.slice(14)}</li>
+            <li className ='tenDay-conditions'>{tenDay[i].conditions}</li>
+            <li className ='tenDay-high'>HIGH: {tenDay[i].high.fahrenheit}</li>
+            <li className ='tenDay-low'>LOW: {tenDay[i].low.fahrenheit}</li>
           </ul>
         </div>)
       }
     }
     debugger
+    // localStorage.setItem('tenDayStorage', JSON.stringify(tenDayStuff));
     return(
       <div>
-        { htmlStuff }
+        { tenDayStuff }
       </div>
     )
   }
