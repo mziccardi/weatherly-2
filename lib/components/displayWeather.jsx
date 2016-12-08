@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import ReactDOM from 'react-dom';
+import _  from 'lodash';
 
 export default class DisplayWeather extends Component {
   constructor() {
@@ -9,11 +10,19 @@ export default class DisplayWeather extends Component {
   }
   render(){
     let tenDay= this.props.weatherArray ? this.props.weatherArray.forecast.simpleforecast.forecastday :[]
-    // debugger
     var htmlStuff = [];
-    // for (var i=0; i<tenDay.length; i++){
-    // <h1>{tenDay[i].conditions}</h1>
-    // }
+    if(!_.isEmpty(tenDay)){
+    for (var i=0; i<tenDay.length; i++){
+        htmlStuff.push(
+          <div>{tenDay[i].conditions}</div>)
+
+
+
+    }
+  }
+
+
+  debugger
 
     return(
       <div>
