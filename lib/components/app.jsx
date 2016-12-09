@@ -15,11 +15,11 @@ export default class Application extends Component {
     };
   }
 
-  componentDidMount(){
-    let storedStuff =  JSON.parse(localStorage.getItem('stored'))
-    this.getWeatherLocation(storedStuff.city, storedStuff.state)
-    this.setState( {city: storedStuff.city})
-}
+  componentDidMount() {
+    const storedStuff = JSON.parse(localStorage.getItem('stored'));
+    this.getWeatherLocation(storedStuff.city, storedStuff.state);
+    this.setState({ city: storedStuff.city });
+  }
   //   localStorage.setItem(location, JSON.stringify(storedLocation))
   //   this.getWeatherLocation(storedLocation)
   // }
@@ -28,17 +28,15 @@ export default class Application extends Component {
   //   on refresh make ajax call with saved city and state
 
   getWeatherLocation(city, state) {
-    let apiUrl = `http://api.wunderground.com/api/1c29b78d45895118/alerts/conditions/forecast10day/hourly10day/q/${state}/${city}.json`
-    $.get(apiUrl, (input)=> {
-      this.setState({ weatherArray: input})
-      console.log(input)
+    const apiUrl = `http://api.wunderground.com/api/1c29b78d45895118/alerts/conditions/forecast10day/hourly10day/q/${state}/${city}.json`;
+    $.get(apiUrl, (input) => {
+      this.setState({ weatherArray: input });
     });
   }
-  setLocation({ city, state}) {
-    this.setState({ city, state},
-      ()=>localStorage.setItem('stored',JSON.stringify({city,state})))
-    this.getWeatherLocation(city, state)
-
+  setLocation({ city, state }) {
+    this.setState({ city, state },
+      () => localStorage.setItem('stored', JSON.stringify({ city, state })));
+    this.getWeatherLocation(city, state);
   }
 
   render() {
