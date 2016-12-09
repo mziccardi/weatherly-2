@@ -18,6 +18,7 @@ module.exports = {
         },
       },
       { test: /\.css$/, loader: 'style!css' },
+        { test: /\.svg$/, loader: 'svg-url-loader' },
       { test: /\.scss$/, loader: 'style!css!sass' },
     ],
   },

@@ -1,0 +1,21 @@
+@mixin flex-display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//sass variables
+$primaryFont: 'Orbitron', sans-serif;
+
+body{
+  background-color: #48466D;
+  color: #D8E9F0;
+}
+.header{
+  font-size: 50px;
+  text-align: center;
+}
+.partlycloudy{
+  background: url('http://icons.wxug.com/i/c/k/partlycloudy.gif') no-repeat;
+  width: 50px;
+  height: 50px;
+}

@@ -15,6 +15,7 @@ export default class DisplayWeather extends Component {
           <ul className = 'daily-forecast'>
             <li className ='tenDay-pretty'>{tenDay[i].date.pretty.slice(14)}</li>
             <li className ='tenDay-conditions'>{tenDay[i].conditions}</li>
+            <div className = {tenDay[i].icon}></div>
             <li className ='tenDay-high'>HIGH: {tenDay[i].high.fahrenheit}</li>
             <li className ='tenDay-low'>LOW: {tenDay[i].low.fahrenheit}</li>
           </ul>
