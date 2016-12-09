@@ -4,11 +4,8 @@ import ReactDOM from 'react-dom';
 import _  from 'lodash';
 
 export default class CurrentWeather extends Component {
-  constructor() {
-    super();
-  }
   render(){
-      
+
     let current = this.props.weatherArray ? this.props.weatherArray.current_observation.temp_f : null;
     if(!current){
       return <div></div>

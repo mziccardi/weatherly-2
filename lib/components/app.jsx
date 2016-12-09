@@ -17,9 +17,8 @@ export default class Application extends Component {
 
   componentDidMount(){
     let storedStuff =  JSON.parse(localStorage.getItem('stored'))
-    console.log(storedStuff)
-    debugger
     this.getWeatherLocation(storedStuff.city, storedStuff.state)
+    this.setState( {city: storedStuff.city})
 }
   //   localStorage.setItem(location, JSON.stringify(storedLocation))
   //   this.getWeatherLocation(storedLocation)
