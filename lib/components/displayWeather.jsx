@@ -8,6 +8,7 @@ export default class DisplayWeather extends Component {
     super();
 
   }
+  //every item in list needs unique key so react knows when item in list changes.
   render(){
     let tenDay= this.props.weatherArray ? this.props.weatherArray.forecast.simpleforecast.forecastday :[]
     var tenDayStuff = [];
@@ -23,7 +24,6 @@ export default class DisplayWeather extends Component {
           </ul>
         </div>)
       }
-      console.log(tenDayStuff)
       // localStorage.setItem('tenDayStuff', JSON.stringify(tenDayStuff));
     }
     return(

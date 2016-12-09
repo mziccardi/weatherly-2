@@ -12,12 +12,13 @@ export default class UserInput extends Component {
   }
   citySet(e) {
     let city = e.target.value
-  this.setState({ city: city })
+  this.setState({ city })
   }
   stateSet(e){
     let state = e.target.value;
     this.setState({ state : state })
   }
+  //controled input
   render() {
     return (
       <div>
