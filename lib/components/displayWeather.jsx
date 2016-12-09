@@ -4,10 +4,7 @@ import ReactDOM from 'react-dom';
 import _  from 'lodash';
 
 export default class DisplayWeather extends Component {
-  constructor() {
-    super();
-
-  }
+  //every item in list needs unique key so react knows when item in list changes.
   render(){
     let tenDay= this.props.weatherArray ? this.props.weatherArray.forecast.simpleforecast.forecastday :[]
     var tenDayStuff = [];
@@ -15,7 +12,7 @@ export default class DisplayWeather extends Component {
     for (var i=0; i<tenDay.length; i++){
         tenDayStuff.push(
           <div className ='tenDay-display'>
-          <ul>
+          <ul className = 'daily-forecast'>
             <li className ='tenDay-pretty'>{tenDay[i].date.pretty.slice(14)}</li>
             <li className ='tenDay-conditions'>{tenDay[i].conditions}</li>
             <li className ='tenDay-high'>HIGH: {tenDay[i].high.fahrenheit}</li>
@@ -23,8 +20,6 @@ export default class DisplayWeather extends Component {
           </ul>
         </div>)
       }
-      console.log(tenDayStuff)
-      // localStorage.setItem('tenDayStuff', JSON.stringify(tenDayStuff));
     }
     return(
       <div>
