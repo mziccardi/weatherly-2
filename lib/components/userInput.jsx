@@ -11,7 +11,7 @@ export default class UserInput extends Component {
     };
   }
   citySet(e) {
-    const city = e.target.value;
+    const city = e.target.value
     this.setState({ city });
   }
   stateSet(e) {
@@ -21,6 +21,7 @@ export default class UserInput extends Component {
   render() {
     return (
       <div>
+        <div className = 'user-input'>
         <input
           className='user-city'
           placeholder='Enter City'
@@ -31,10 +32,12 @@ export default class UserInput extends Component {
           placeholder='Enter State'
           onChange = {(e) => this.stateSet(e)}
           />
+        </div>
           <button
             className='submit-location'
-            onClick={()=>this.props.setLocation(this.state)}
-            >Submit</button>
+            onClick={ () => this.props.setLocation(this.state) }
+            >What's the Weather?</button>
+
       </div>
     );
   }

@@ -21,8 +21,44 @@ ul{
   font-size: 50px;
   text-align: center;
 }
+.welcome-text{
+  @include flex-display;
+}
+.current-display{
+  @include flex-display;
+  margin-top: 15px;
+}
+.current-display{
+  font-size: 32px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.current-temp{
+  font-size: 72px;
+}
 .tenDay-display{
   @include flex-display;
+  flex-wrap: wrap;
+}
+button.submit-location{
+  margin: auto;
+  display: block;
+  border: none;
+  border-radius: 50%;
+  background-color: #6A7EFC;
+  color: white;
+}
+.user-city{
+  margin-right: 5px;
+}
+.user-state{
+  margin-left: 5px;
+}
+.user-input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .partlycloudy{
   @include icons;

@@ -14,19 +14,11 @@ export default class Application extends Component {
       weatherArray: null,
     };
   }
-
   componentDidMount() {
     const storedStuff = JSON.parse(localStorage.getItem('stored'));
     this.getWeatherLocation(storedStuff.city, storedStuff.state);
     this.setState({ city: storedStuff.city });
   }
-  //   localStorage.setItem(location, JSON.stringify(storedLocation))
-  //   this.getWeatherLocation(storedLocation)
-  // }
-  //   want to save the most recent state of city and state
-  //   save city and state into local storage
-  //   on refresh make ajax call with saved city and state
-
   getWeatherLocation(city, state) {
     const apiUrl = `http://api.wunderground.com/api/1c29b78d45895118/alerts/conditions/forecast10day/hourly10day/q/${state}/${city}.json`;
     $.get(apiUrl, (input) => {
@@ -43,7 +35,7 @@ export default class Application extends Component {
     return (
       <section>
         <h1 className ='header'>Welcome To Weatherly</h1>
-        <h4 className = 'welcome text'>Please enter your City and State</h4>
+        <h4 className = 'welcome-text'>Please enter your City and State</h4>
         <UserInput
           setLocation = {(location) => this.setLocation(location)}
         />

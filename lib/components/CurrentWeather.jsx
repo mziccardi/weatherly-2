@@ -11,9 +11,13 @@ export default class CurrentWeather extends Component {
       return <div></div>;
     }
     return (
-       <div className ='current-display'>
-        It is currently: {current}&#176; in {this.props.city}
-      </div>
+       <section className ='current-display'>
+         <div className='currently'>
+        It is currently:
+        </div>
+         <span className = 'current-temp'>{ current}&#176;</span>
+        in {this.props.city}
+      </section>
     );
   }
 }
