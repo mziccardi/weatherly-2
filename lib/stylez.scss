@@ -1,0 +1,98 @@
+@mixin flex-display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin icons{
+  width: 50px;
+  height: 50px;
+}
+//sass variables
+$primaryFont: 'Orbitron', sans-serif;
+
+body{
+  background-color: #48466D;
+  color: #D8E9F0;
+}
+ul{
+  list-style-type: none;
+}
+.header{
+  font-size: 50px;
+  text-align: center;
+}
+.welcome-text{
+  @include flex-display;
+}
+.current-display{
+  @include flex-display;
+  margin-top: 15px;
+}
+.current-display{
+  font-size: 32px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.current-temp{
+  font-size: 72px;
+}
+.tenDay-display{
+  @include flex-display;
+  flex-wrap: wrap;
+}
+button.submit-location{
+  margin: auto;
+  display: block;
+  border: none;
+  border-radius: 50%;
+  background-color: #6A7EFC;
+  color: white;
+}
+.user-city{
+  margin-right: 5px;
+}
+.user-state{
+  margin-left: 5px;
+}
+.user-input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.partlycloudy{
+  @include icons;
+  background: url('http://icons.wxug.com/i/c/k/partlycloudy.gif') no-repeat;
+}
+.snow{
+  @include icons;
+background: url('http://icons.wxug.com/i/c/k/snow.gif') no-repeat;
+}
+.sleet{
+  @include icons;
+background: url('http://icons.wxug.com/i/c/k/sleet.gif') no-repeat;
+}
+.cloudy{
+  @include icons;
+background: url('http://icons.wxug.com/i/c/k/cloudy.gif') no-repeat;
+}
+.mostlycloudy{
+  @include icons;
+background: url('http://icons.wxug.com/i/c/k/mostlycloudy.gif') no-repeat;
+}
+.clear{
+  @include icons;
+background: url('http://icons.wxug.com/i/c/k/clear.gif') no-repeat;
+}
+.chancerain {
+  @include icons;
+background: url('http://icons.wxug.com/i/c/k/chancerain.gif') no-repeat;
+}
+.tstorms{
+  @include icons;
+background: url('http://icons.wxug.com/i/c/k/tstorms.gif') no-repeat;
+}
+.chancetstorms{
+  @include icons;
+background: url('http://icons.wxug.com/i/c/k/chancetstorms.gif') no-repeat;
+}

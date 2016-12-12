@@ -11,17 +11,17 @@ export default class UserInput extends Component {
     };
   }
   citySet(e) {
-    let city = e.target.value
-  this.setState({ city })
+    const city = e.target.value
+    this.setState({ city });
   }
-  stateSet(e){
-    let state = e.target.value;
-    this.setState({ state : state })
+  stateSet(e) {
+    const state = e.target.value;
+    this.setState({ state });
   }
-  //controled input
   render() {
     return (
       <div>
+        <div className = 'user-input'>
         <input
           className='user-city'
           placeholder='Enter City'
@@ -32,10 +32,12 @@ export default class UserInput extends Component {
           placeholder='Enter State'
           onChange = {(e) => this.stateSet(e)}
           />
+        </div>
           <button
             className='submit-location'
-            onClick={()=>this.props.setLocation(this.state)}
-            >Submit</button>
+            onClick={ () => this.props.setLocation(this.state) }
+            >What's the Weather?</button>
+
       </div>
     );
   }

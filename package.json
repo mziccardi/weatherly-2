@@ -47,7 +47,10 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "babel-register": "^6.7.2",
+    "enzyme": "^2.6.0",
     "jquery": "^3.1.1",
-    "lodash": "^4.17.2"
+    "lodash": "^4.17.2",
+    "svg-url-loader": "^1.1.0"
   }
 }
