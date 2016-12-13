@@ -3,6 +3,7 @@ import { Component } from 'react';
 import UserInput from './userInput';
 import DisplayWeather from './DisplayWeather'
 import CurrentWeather from './CurrentWeather'
+// import Alert from './Alert'
 const $ = require('jquery');
 
 export default class Application extends Component {
@@ -23,7 +24,7 @@ export default class Application extends Component {
     const apiUrl = `http://api.wunderground.com/api/1c29b78d45895118/alerts/conditions/forecast10day/hourly10day/q/${state}/${city}.json`;
     $.get(apiUrl, (input) => {
       this.setState({ weatherArray: input });
-
+      console.log(input)
     });
   }
   setLocation({ city, state }) {
@@ -48,6 +49,9 @@ export default class Application extends Component {
         <DisplayWeather
         weatherArray= {this.state.weatherArray}
         />
+        {/* <Alert
+        weatherArray = {this.state.weatherArray}
+      /> */}
       </section>
     );
   }
