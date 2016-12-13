@@ -23,6 +23,7 @@ export default class Application extends Component {
     const apiUrl = `http://api.wunderground.com/api/1c29b78d45895118/alerts/conditions/forecast10day/hourly10day/q/${state}/${city}.json`;
     $.get(apiUrl, (input) => {
       this.setState({ weatherArray: input });
+
     });
   }
   setLocation({ city, state }) {
@@ -32,6 +33,7 @@ export default class Application extends Component {
   }
 
   render() {
+
     return (
       <section>
         <h1 className ='header'>Welcome To Weatherly</h1>
