@@ -36,7 +36,7 @@ export default class UserInput extends Component {
           <button
             className='submit-location'
             onClick={ () => this.props.setLocation(this.state) }
-            >What's the Weather?</button>
+            >GIVE ME THE WEATHER</button>
 
       </div>
     );

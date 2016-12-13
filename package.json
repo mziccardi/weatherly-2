@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "test": "mocha --compilers js:babel/register",
+    "test": "mocha --compilers js:babel-core/register",
     "lint": "eslint lib/components.js"
   },
   "repository": {
@@ -40,6 +40,7 @@
     "node-libs-browser": "^1.0.0",
     "node-sass": "^3.4.2",
     "react": "^15.1.0",
+    "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.1.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
@@ -51,6 +52,7 @@
     "enzyme": "^2.6.0",
     "jquery": "^3.1.1",
     "lodash": "^4.17.2",
+    "sinon": "^1.17.6",
     "svg-url-loader": "^1.1.0"
   }
 }
