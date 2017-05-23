@@ -21,7 +21,7 @@ export default class Application extends Component {
     this.setState({ city: storedStuff.city });
   }
   getWeatherLocation(city, state) {
-    const apiUrl = `http://api.wunderground.com/api/1c29b78d45895118/alerts/conditions/forecast10day/hourly10day/q/${state}/${city}.json`;
+    const apiUrl = `http://api.wunderground.com/api/66ae08c4c30ce38c/alerts/conditions/forecast10day/hourly10day/q/${state}/${city}.json`;
     $.get(apiUrl, (input) => {
       this.setState({ weatherArray: input });
 
